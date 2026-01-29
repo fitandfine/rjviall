@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RJ Viall Builders | Regan Viall</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #0f172a;
+    --card: #111827;
+    --primary: #fbbf24;
+    --secondary: #38bdf8;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #1e293b, var(--bg));
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+}
+
+.container {
+    width: 100%;
+    max-width: 520px;
+    background: linear-gradient(180deg, #020617, var(--card));
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.logo img {
+    width: 110px;
+    height: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary);
+    font-weight: 500;
+    margin-top: 6px;
+}
+
+.tagline {
+    text-align: center;
+    margin: 18px 0 26px;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 26px;
+}
+
+.service {
+    background: rgba(255,255,255,0.03);
+    padding: 14px;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.icon {
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.btn {
+    padding: 14px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--primary), #f59e0b);
+    color: #000;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 10px 30px rgba(251,191,36,0.35);
+}
+
+.btn.secondary {
+    background: linear-gradient(135deg, var(--secondary), #0ea5e9);
+    color: #001018;
+    box-shadow: 0 10px 30px rgba(56,189,248,0.35);
+}
+
+.btn.dark {
+    background: #020617;
+    color: var(--text);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.footer {
+    margin-top: 28px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.footer a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.footer-actions {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.footer-actions button {
+    background: none;
+    border: none;
+    color: var(--secondary);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.qr-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(2,6,23,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.qr-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.qr-box {
+    background: var(--card);
+    padding: 24px;
+    border-radius: 18px;
+    text-align: center;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); }
+    to { transform: scale(1); }
+}
+
+.qr-box img {
+    width: 220px;
+    margin-bottom: 14px;
+}
+
+.close {
+    color: var(--primary);
+    cursor: pointer;
+    font-weight: 600;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="logo">
+        <img src="logo.png" alt="RJ Viall Builders Logo">
+    </div>
+
+    <h1>RJ Viall Builders</h1>
+    <h2>Regan Viall</h2>
+
+    <p class="tagline">
+        Precision-built residential and commercial construction —
+        from new builds to structural renovations and long-term maintenance.
+        Built once. Built right.
+    </p>
+
+    <div class="services">
+        <div class="service"><span class="icon">🏗️</span> New Builds</div>
+        <div class="service"><span class="icon">🏠</span> Residential</div>
+        <div class="service"><span class="icon">🏢</span> Commercial</div>
+        <div class="service"><span class="icon">🔧</span> Renovations & Maintenance</div>
+    </div>
+
+    <div class="actions">
+        <a class="btn" href="tel:0272959703">📞 Call</a>
+        <a class="btn" href="sms:0272959703">💬 SMS</a>
+        <a class="btn secondary" href="https://wa.me/64272959703">🟢 WhatsApp</a>
+        <a class="btn secondary" href="mailto:rjviallbuilders@xtra.co.nz">✉️ Email</a>
+        <a class="btn dark" href="#" onclick="saveContact()">💾 Save Contact</a>
+        <a class="btn dark" href="#" onclick="sharePage()">🔗 Share</a>
+    </div>
+
+    <div class="footer">
+        
+        <div class="footer-actions">
+            <button onclick="sharePage()">Share</button>
+            <button onclick="toggleQR(true)">Share QR</button>
+        </div>
+        Built by <a href="https://fitandfine.github.io/anup/" target="_blank">Anup</a>
+    </div>
+</div>
+
+<div class="qr-overlay" id="qr">
+    <div class="qr-box">
+        <img src="qr.png" alt="QR Code">
+        <div class="close" onclick="toggleQR(false)">Close</div>
+    </div>
+</div>
+
+<script>
+function saveContact() {
+    const vcard =
+`BEGIN:VCARD
+VERSION:3.0
+N:Viall;Regan
+FN:Regan Viall
+ORG:RJ Viall Builders
+TEL;TYPE=CELL:0272959703
+EMAIL:rjviallbuilders@xtra.co.nz
+END:VCARD`;
+
+    const blob = new Blob([vcard], { type: 'text/vcard' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Regan_Viall.vcf';
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+function sharePage() {
+    if (navigator.share) {
+        navigator.share({
+            title: 'RJ Viall Builders',
+            text: 'Professional residential & commercial building services.',
+            url: window.location.href
+        });
+    } else {
+        alert('Sharing not supported on this device.');
+    }
+}
+
+function toggleQR(show) {
+    document.getElementById('qr').classList.toggle('active', show);
+}
+</script>
+
+</body>
+</html>
