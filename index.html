@@ -287,29 +287,27 @@ function sharePage() {
 
 <script>
 function saveContact() {
-    const vcard =
-`BEGIN:VCARD
-VERSION:3.0
-N:Viall;Regan
-FN:Regan Viall
-ORG:RJ Viall Builders
-TEL;TYPE=CELL:0272959703
-EMAIL:rjviallbuilders@xtra.co.nz
-END:VCARD`;
+    var vCardData =
+        "BEGIN:VCARD\n" +
+        "VERSION:3.0\n" +
+        "N:Viall;Regan\n" +
+        "FN:Regan Viall\n" +
+        "ORG:RJ Viall Builders\n" +
+        "TEL;TYPE=CELL,VOICE:0272959703\n" +
+        "EMAIL;TYPE=PREF,INTERNET:rjviallbuilders@xtra.co.nz\n" +
+        "END:VCARD";
 
-    const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-
-    const link = document.createElement("a");
-    link.href = url;
+    var blob = new Blob([vCardData], { type: "text/vcard" });
+    var link = document.createElement("a");
+    link.href = window.URL.createObjectURL(blob);
     link.download = "Regan_Viall.vcf";
+
     document.body.appendChild(link);
     link.click();
-
     document.body.removeChild(link);
-    URL.revokeObjectURL(url);
 }
 </script>
+
 
 
 </body>
