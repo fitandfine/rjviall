@@ -5,15 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>RJ Viall Builders | Regan Viall</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
     --bg: #0f172a;
     --card: #111827;
-    --primary: #fbbf24;
-    --secondary: #38bdf8;
+    --brand: #fbbf24;
+    --brand-dark: #f59e0b;
     --text: #e5e7eb;
     --muted: #9ca3af;
 }
@@ -31,7 +30,7 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    padding: 24px;
+    padding: 24px 16px 90px;
 }
 
 .container {
@@ -39,7 +38,7 @@ body {
     max-width: 520px;
     background: linear-gradient(180deg, #020617, var(--card));
     border-radius: 22px;
-    padding: 28px;
+    padding: 30px;
     box-shadow: 0 30px 80px rgba(0,0,0,0.6);
     animation: fadeIn 0.8s ease;
 }
@@ -49,30 +48,32 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* LOGO */
 .logo {
     display: flex;
     justify-content: center;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .logo img {
-    width: 110px;
-    height: auto;
+    width: 150px;
 }
 
+/* HEADINGS */
 h1 {
     text-align: center;
-    font-size: 1.9rem;
+    font-size: 2rem;
     font-weight: 700;
 }
 
 h2 {
     text-align: center;
-    color: var(--primary);
+    color: var(--brand);
     font-weight: 500;
     margin-top: 6px;
 }
 
+/* TAGLINE */
 .tagline {
     text-align: center;
     margin: 18px 0 26px;
@@ -80,6 +81,7 @@ h2 {
     color: var(--muted);
 }
 
+/* SERVICES */
 .services {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -88,7 +90,7 @@ h2 {
 }
 
 .service {
-    background: rgba(255,255,255,0.03);
+    background: rgba(255,255,255,0.04);
     padding: 14px;
     border-radius: 14px;
     font-size: 0.9rem;
@@ -99,9 +101,9 @@ h2 {
 
 .icon {
     font-size: 1.2rem;
-    color: var(--primary);
 }
 
+/* ACTION BUTTONS */
 .actions {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -111,7 +113,7 @@ h2 {
 .btn {
     padding: 14px;
     border-radius: 14px;
-    background: linear-gradient(135deg, var(--primary), #f59e0b);
+    background: linear-gradient(135deg, var(--brand), var(--brand-dark));
     color: #000;
     text-align: center;
     font-weight: 600;
@@ -120,49 +122,49 @@ h2 {
     box-shadow: 0 10px 30px rgba(251,191,36,0.35);
 }
 
-.btn.secondary {
-    background: linear-gradient(135deg, var(--secondary), #0ea5e9);
-    color: #001018;
-    box-shadow: 0 10px 30px rgba(56,189,248,0.35);
-}
-
-.btn.dark {
-    background: #020617;
-    color: var(--text);
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
-}
-
 .btn:hover {
     transform: translateY(-2px);
 }
 
+/* FOOTER */
 .footer {
-    margin-top: 28px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #020617;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 14px 12px;
     text-align: center;
-    font-size: 0.85rem;
-    color: var(--muted);
-}
-
-.footer a {
-    color: var(--primary);
-    text-decoration: none;
 }
 
 .footer-actions {
-    margin-top: 14px;
     display: flex;
     justify-content: center;
-    gap: 18px;
+    gap: 26px;
+    margin-bottom: 8px;
 }
 
 .footer-actions button {
     background: none;
     border: none;
-    color: var(--secondary);
+    color: var(--brand);
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
 }
 
+.footer small {
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.footer a {
+    color: var(--brand);
+    text-decoration: none;
+}
+
+/* QR MODAL */
 .qr-overlay {
     position: fixed;
     inset: 0;
@@ -173,6 +175,7 @@ h2 {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
+    z-index: 10;
 }
 
 .qr-overlay.active {
@@ -199,7 +202,7 @@ h2 {
 }
 
 .close {
-    color: var(--primary);
+    color: var(--brand);
     cursor: pointer;
     font-weight: 600;
 }
@@ -232,21 +235,22 @@ h2 {
     <div class="actions">
         <a class="btn" href="tel:0272959703">📞 Call</a>
         <a class="btn" href="sms:0272959703">💬 SMS</a>
-        <a class="btn secondary" href="https://wa.me/64272959703">🟢 WhatsApp</a>
-        <a class="btn secondary" href="mailto:rjviallbuilders@xtra.co.nz">✉️ Email</a>
-        <a class="btn dark" href="#" onclick="saveContact()">💾 Save Contact</a>
-        <a class="btn dark" href="#" onclick="sharePage()">🔗 Share</a>
-    </div>
-
-    <div class="footer">
-        
-        <div class="footer-actions">
-            <button onclick="sharePage()">Share</button>
-            <button onclick="toggleQR(true)">Share QR</button>
-        </div>
-        Built by <a href="https://fitandfine.github.io/anup/" target="_blank">Anup</a>
+        <a class="btn" href="https://wa.me/64272959703">🟢 WhatsApp</a>
+        <a class="btn" href="mailto:rjviallbuilders@xtra.co.nz">✉️ Email</a>
+        <a class="btn" href="#" onclick="saveContact()">💾 Save Contact</a>
     </div>
 </div>
+
+<footer class="footer">
+    <div class="footer-actions">
+        <button onclick="sharePage()">🔗 Share</button>
+        <button onclick="toggleQR(true)">📱 Share QR</button>
+    </div>
+    <small>
+        ⚙️🔨 Built by
+        <a href="https://fitandfine.github.io/anup/" target="_blank">Anup</a>
+    </small>
+</footer>
 
 <div class="qr-overlay" id="qr">
     <div class="qr-box">
@@ -283,8 +287,6 @@ function sharePage() {
             text: 'Professional residential & commercial building services.',
             url: window.location.href
         });
-    } else {
-        alert('Sharing not supported on this device.');
     }
 }
 
