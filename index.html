@@ -260,6 +260,32 @@ h2 {
 </div>
 
 <script>
+
+
+
+function toggleQR(show) {
+    document.getElementById('qr').classList.toggle('active', show);
+}
+</script>
+<script>
+function sharePage() {
+    const shareData = {
+        title: 'RJ Viall Builders',
+        text: 'Professional residential & commercial building services.',
+        url: window.location.href
+    };
+
+    if (navigator.share) {
+        navigator.share(shareData).catch(() => {});
+    } else {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            alert("Link copied to clipboard");
+        });
+    }
+}
+</script>
+
+<script>
 function saveContact() {
     const vcard =
 `BEGIN:VCARD
@@ -271,29 +297,20 @@ TEL;TYPE=CELL:0272959703
 EMAIL:rjviallbuilders@xtra.co.nz
 END:VCARD`;
 
-    const blob = new Blob([vcard], { type: 'text/vcard' });
+    const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'Regan_Viall.vcf';
-    a.click();
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "Regan_Viall.vcf";
+    document.body.appendChild(link);
+    link.click();
+
+    document.body.removeChild(link);
     URL.revokeObjectURL(url);
 }
-
-function sharePage() {
-    if (navigator.share) {
-        navigator.share({
-            title: 'RJ Viall Builders',
-            text: 'Professional residential & commercial building services.',
-            url: window.location.href
-        });
-    }
-}
-
-function toggleQR(show) {
-    document.getElementById('qr').classList.toggle('active', show);
-}
 </script>
+
 
 </body>
 </html>
